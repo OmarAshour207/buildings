@@ -14,28 +14,32 @@ class BuildingController extends Controller
 {
     public function showAllBuildings(Building $building)
     {
+        $h1 = 'كل العقارات';
         $buildings = $building->where('status', 1)->latest()->paginate(12);
 //        dd($buildings);
-        return view('website.all_buildings', compact('buildings'));
+        return view('website.all_buildings', compact('buildings', 'h1'));
     }
 
     public function showRent(Building $building)
     {
-        $buildings = $building->where('status', 1)->where('rent', 2)->orderBy('id', 'desc')->paginate(12);
-        return view('website.all_buildings', compact('buildings'));
+        $h1 = "الايجار";
+        $buildings = $building->where('status', 1)->where('rent', 0)->orderBy('id', 'desc')->paginate(12);
+        return view('website.all_buildings', compact('buildings', 'h1'));
     }
 
     public function showBuy(Building $building)
     {
+        $h1 = 'تمليك';
         $buildings = $building->where('status', 1)->where('rent', 1)->orderBy('id', 'desc')->paginate(12);
-        return view('website.all_buildings', compact('buildings'));
+        return view('website.all_buildings', compact('buildings', 'h1'));
     }
 
     public function showType($type, Building $building)
     {
         if(in_array($type , ['0', '1', '2'])){
+            $h1 = building_type()[$type];
             $buildings = $building->where('status', 1)->where('type', $type)->orderBy('id', 'desc')->paginate(12);
-            return view('website.all_buildings', compact('buildings'));
+            return view('website.all_buildings', compact('buildings', 'h1'));
         } else {
             return redirect()->back();
         }
@@ -61,6 +65,7 @@ class BuildingController extends Controller
 
     public function showAdvancedSearch(Request $request, Building $building)
     {
+        $h1 = 'كل العقارات';
         $min = $request->price_from == '' ? '50' : $request->price_from;
         $max = $request->price_to == '' ? '1000000' : $request->price_to;
 
@@ -82,7 +87,7 @@ class BuildingController extends Controller
         }
         $buildings = $query->paginate(2);
 
-        return view('website.all_buildings', compact(['buildings', 'array']) );
+        return view('website.all_buildings', compact(['buildings', 'array', 'h1']) );
     }
 
     public function showSingleBuilding($id)

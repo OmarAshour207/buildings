@@ -52,7 +52,7 @@
 
                 </form>
                 </p>
-                <a class="banner_btn" href="{{ route('store.create') }}"> أضف عقارك </a> </div>
+                <a class="banner_btn" href="{{ route('store.create') }}" title=" أضف عقارك"> أضف عقارك </a> </div>
         </div>
     </div>
     <div class="main">

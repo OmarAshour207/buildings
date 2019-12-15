@@ -5,8 +5,8 @@
                 <div class="product-grid3">
                     <div class="product-image3">
                         <a href="{{  url('/building/' . $building->id) }}">
-                            <img class="pic-1" src="/uploads/buildings_images/{{ $building->image }}">
-                            <img class="pic-2" src="/uploads/buildings_images/{{ $building->image }}">
+                            <img class="pic-1" src="{{ $building->imagePath }}">
+                            <img class="pic-2" src="{{ $building->imagePath }}">
                         </a>
                         <ul class="social">
                             <li><a href="{{ url('/building/' . $building->id) }}"><i class="fa fa-eye"></i></a></li>

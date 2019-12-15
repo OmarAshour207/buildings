@@ -183,6 +183,9 @@ return [
 
         Yajra\Datatables\DatatablesServiceProvider::class,
 
+        //SEO
+        Thujohn\Rss\RssServiceProvider::class,
+
     ],
 
     /*
@@ -238,6 +241,9 @@ return [
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'DataTables' => \Yajra\Datatables\Datatables::class,
+
+        //SEO
+        'Rss' => Thujohn\Rss\RssFacade::class,
     ],
 
 ];

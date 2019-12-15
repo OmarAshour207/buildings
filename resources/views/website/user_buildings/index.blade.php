@@ -21,12 +21,12 @@
                             <div class="col-md-4 col-sm-6 pull-right">
                                 <div class="product-grid3">
                                     <div class="product-image3">
-                                        <a href="{{  url('/building/' . $building->id) }}">
-                                            <img class="pic-1" src="/uploads/buildings_images/{{ $building->image }}">
-                                            <img class="pic-2" src="/uploads/buildings_images/{{ $building->image }}">
+                                        <a href="{{  url('/building/' . $building->id) }}" title="{{ $building->name }}">
+                                            <img class="pic-1" src="{{ $building->imagePath }}" title="{{ $building->name }}" alt="{{ $building->name }}">
+                                            <img class="pic-2" src="{{ $building->imagePath }}" title="{{ $building->name }}" alt="{{ $building->name }}">
                                         </a>
                                         <ul class="social">
-                                            <li><a href="{{ url('/building/' . $building->id) }}"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="{{ url('/building/' . $building->id) }}" title="{{ $building->name }}"><i class="fa fa-eye"></i></a></li>
                                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                         <span class="product-new-label">
@@ -34,7 +34,7 @@
                                 </span>
                                     </div>
                                     <div class="product-content">
-                                        <h3 class="title"><a href="{{ url('/building/' . $building->id) }}">{{ $building->name }}</a></h3>
+                                        <h3 class="title"><a href="{{ url('/building/' . $building->id) }}" title="{{ $building->name }}">{{ $building->name }}</a></h3>
                                         <div class="price">
                                             {{ $building->square }} متر مربع
                                         </div>

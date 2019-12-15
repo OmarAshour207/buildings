@@ -17,7 +17,7 @@
             <div class="col-md-9">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb" style="background-color: #FFF;">
-                        <li class="breadcrumb-item"><a href="{{ route('home') }}"> الرئيسيه </a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('home') }}" title="الرئيسيه"> الرئيسيه </a></li>
                         <li class="breadcrumb-item active"> تعديل عقار </li>
                     </ol>
                 </nav>
@@ -102,7 +102,7 @@
                             </div>
 
                             <div class="form-group">
-                                <img src="{{ $building->imagePath }}" style="width: 100px" class="img-thumbnail image-preview" alt="صوره العقار">
+                                <img src="{{ $building->imagePath }}" style="width: 100px" class="img-thumbnail image-preview"  title="{{ $building->name }}" alt="{{ $building->name }}">
                             </div>
 
                             <div class="form-group">

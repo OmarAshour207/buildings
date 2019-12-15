@@ -44,6 +44,9 @@
             <li>
                 <a href="{{ url('/adminpanel/building/year/statistics') }}"><i class="fa fa-bar-chart"></i><span> أحصائيه أضافه العقار </span></a>
             </li>
+            <li>
+                <a href="{{ url('/adminpanel/generate_rss') }}"><i class="fa fa-rss"></i><span> توليد خريطه الموقع </span></a>
+            </li>
         </ul>
 
 

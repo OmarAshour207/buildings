@@ -43,7 +43,7 @@
                             </div>
 
                             <div class="form-group">
-                                <img src="{{ $user->imagePath }}" style="width: 100px" class="img-thumbnail image-preview" alt="User Image">
+                                <img src="{{ $user->imagePath }}" style="width: 100px" class="img-thumbnail image-preview" alt="{{ $user->name }}" title="{{ $user->name }}">
                             </div>
 
                             <div class="form-group">

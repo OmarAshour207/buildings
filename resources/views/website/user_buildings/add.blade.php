@@ -17,8 +17,8 @@
             <div class="col-md-9">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb" style="background-color: #FFF;">
-                        <li class="breadcrumb-item"><a href="{{ route('home') }}"> الرئيسيه </a></li>
-                        <li class="breadcrumb-item active"><a href="{{ route('store.create') }}"> أضافه عقار </a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('home') }}" title="الرئيسيه"> الرئيسيه </a></li>
+                        <li class="breadcrumb-item active"><a href="{{ route('store.create') }}" title="أضافه عقار"> أضافه عقار </a></li>
                     </ol>
                 </nav>
 
@@ -100,7 +100,7 @@
                             </div>
 
                             <div class="form-group">
-                                <img src="{{ asset('uploads/buildings_images/default.png') }}" style="width: 100px" class="img-thumbnail image-preview" alt="صوره العقار">
+                                <img src="{{ asset('uploads/buildings_images/default.png') }}" style="width: 100px" class="img-thumbnail image-preview" alt="صوره العقار" title="صوره العقار">
                             </div>
 
                             <div class="form-group">

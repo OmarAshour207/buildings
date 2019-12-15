@@ -20,14 +20,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('all_buildings', 'User\BuildingController@showAllBuildings');
-Route::get('rent', 'User\BuildingController@showRent');
-Route::get('buy', 'User\BuildingController@showBuy');
-Route::get('type/{type_id}', 'User\BuildingController@showType');
+Route::get('all_buildings/{name?}', 'User\BuildingController@showAllBuildings');
+Route::get('rent/{name?}', 'User\BuildingController@showRent');
+Route::get('buy/{name?}', 'User\BuildingController@showBuy');
+Route::get('type/{type_id}/{name?}', 'User\BuildingController@showType');
 
-Route::get('search', 'User\BuildingController@showAdvancedSearch');
+Route::get('search/{name?}', 'User\BuildingController@showAdvancedSearch');
 
-Route::get('building/{id}', 'User\BuildingController@showSingleBuilding');
+Route::get('building/{id}/{name?}', 'User\BuildingController@showSingleBuilding');
 
 Route::get('contact', 'User\BuildingController@showContact');
 
@@ -44,4 +44,7 @@ Route::group(['middleware'  => 'auth', 'namespace' => 'User'], function (){
     // edit on unproved buildings
     Route::get('edit/building/{id}', 'BuildingController@showEditBuilding');
     Route::put('edit/building/{id}', 'BuildingController@editUnprovedBuilding');
+
+    //rss
+    Route::get('/rss', 'HomeController@rss');
 });

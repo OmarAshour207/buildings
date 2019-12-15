@@ -4,6 +4,12 @@
     صفحه تسجيل الدخول
 @endsection
 
+@section('header')
+    <meta name="keyword" content="صفحه تسجيل الدخول">
+    <meta name="description" content="صفحه تسجيل الدخول">
+    <meta name="keyword" content="{{ setting()->namesetting }}">
+@endsection
+
 @section('content')
 
     <div class="container">

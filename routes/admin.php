@@ -34,5 +34,8 @@ Route::group(['prefix'  => 'adminpanel'], function (){
         Route::resource('contacts', 'ContactController');
 
         Route::any('logout' , 'AdminAuth@logout');
+
+        //rss
+        Route::get('generate_rss', 'User/HomeController@generateRss');
     });
 });

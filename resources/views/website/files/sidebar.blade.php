@@ -6,13 +6,13 @@
         <div class="profile-usermenu" style="padding: 10px;">
             <ul class="nav" style="padding-right: 0px;">
                 <li class="{{ setActive(['user', 'profile']) }}">
-                    <a href="{{ url('user/profile') }}">
+                    <a href="{{ url('user/profile') }}" title="تعديل معلوماتي الشخصيه">
                         <i class="fa fa-user"></i>
                         تعديل معلوماتي الشخصيه
                     </a>
                 </li>
                 <li class="{{ setActive(['store']) }}">
-                    <a href="{{ route('store.index') }}">
+                    <a href="{{ route('store.index') }}" title="عقاراتي المفعله">
                         <i class="fa fa-building-o"></i>
                          عقاراتي المفعله
                         <label class="label label-default pull-left">
@@ -21,7 +21,7 @@
                     </a>
                 </li>
                 <li class="{{ setActive(['user', 'unproved', 'stores']) }}">
-                    <a href="{{ url('user/unproved/stores') }}">
+                    <a href="{{ url('user/unproved/stores') }}" title="عقاراتي الغير مفعله">
                         <i class="fa fa-building"></i>
                         عقاراتي الغير مفعله
                        <label class="label label-default pull-left">
@@ -30,7 +30,7 @@
                     </a>
                 </li>
                 <li class="{{ setActive(['user']) }}">
-                    <a href="{{ route('store.create') }}">
+                    <a href="{{ route('store.create') }}" title="ضافه عقار">
                         <i class="fa fa-plus"></i>
                         أضافه عقار
                     </a>
@@ -90,37 +90,37 @@
         <div class="profile-usermenu">
             <ul class="nav" style="padding-right: 0px;">
                 <li class="{{ setActive(['all_buildings']) }}">
-                    <a href="{{ url('/all_buildings') }}">
+                    <a href="{{ url('/all_buildings/كل_العقارات') }}" title="كل العقارات">
                         <i class="fa fa-building"></i>
                         كل العقارات
                     </a>
                 </li>
                 <li class="{{ setActive(['rent']) }}">
-                    <a href="{{ url('/rent') }}">
+                    <a href="{{ url('/rent/ايجار') }}" title="ايجار">
                         <i class="fa fa-calendar"></i>
                         ايجار
                     </a>
                 </li>
                 <li class="{{ setActive(['buy']) }}">
-                    <a href="{{ url('/buy') }}">
+                    <a href="{{ url('/buy/تمليك') }}" title="تمليك">
                         <i class="fa fa-building-o"></i>
                         تمليك
                     </a>
                 </li>
                 <li class="{{ setActive(['type', '0']) }}">
-                    <a href="{{ url('/type/0') }}">
+                    <a href="{{ url('/type/0/شقق') }}" title="الشقق">
                         <i class="fa fa-home"></i>
                         الشقق
                     </a>
                 </li>
                 <li class="{{ setActive(['type', '1']) }}">
-                    <a href="{{ url('/type/1') }}">
+                    <a href="{{ url('/type/1/فلل') }}" title="الفلل">
                         <i class="fa fa-home"></i>
                         الفلل
                     </a>
                 </li>
                 <li class="{{ setActive(['type', '2']) }}">
-                    <a href="{{ url('/type/2') }}">
+                    <a href="{{ url('/type/2/شاليهات') }}" title="الشاليهات">
                         <i class="fa fa-institution"></i>
                         الشاليهات
                     </a>

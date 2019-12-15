@@ -4,6 +4,13 @@
     صفحه تسجيل المستخدم
 @endsection
 
+@section('header')
+    <meta name="keyword" content="صفحه تسجيل المستخدم">
+    <meta name="description" content="صفحه تسجيل المستخدم">
+    <meta name="keyword" content="{{ setting()->namesetting }}">
+@endsection
+
+
 @section('content')
 <div class="container">
     <div class="contact_bottom">

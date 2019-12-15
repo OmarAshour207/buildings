@@ -32,7 +32,7 @@ class Building extends Model
 
     public function getImagePathAttribute()
     {
-        return asset('uploads/buildings_images/' . $this->image);
+        return url('uploads/buildings_images/' . $this->image);//asset('uploads/buildings_images/' . $this->image);
     }
 
     public function user()

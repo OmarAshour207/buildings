@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3c879eda00fdb52e40e1c85a268c0fc1",
+    "content-hash": "418371d038817a728d91a419ed832691",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1540,6 +1540,52 @@
                 "laravel"
             ],
             "time": "2018-09-04T19:00:09+00:00"
+        },
+        {
+            "name": "mayconbordin/rss-l5",
+            "version": "1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mayconbordin/rss-l5.git",
+                "reference": "b476053600ac39d49451ef499d70ea34aa785302"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mayconbordin/rss-l5/zipball/b476053600ac39d49451ef499d70ea34aa785302",
+                "reference": "b476053600ac39d49451ef499d70ea34aa785302",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.*",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Thujohn\\Rss\\": "src/Thujohn/Rss/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "thujohn",
+                    "email": "jonathan.thuau@gmail.com"
+                },
+                {
+                    "name": "Maycon Viana Bordin",
+                    "email": "mayconvianabordin@gmail.com"
+                }
+            ],
+            "description": "RSS builder for Laravel 5",
+            "keywords": [
+                "laravel",
+                "laravel5",
+                "rss"
+            ],
+            "time": "2015-07-08T00:03:25+00:00"
         },
         {
             "name": "monolog/monolog",

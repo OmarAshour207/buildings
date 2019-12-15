@@ -1,7 +1,24 @@
 @extends('layouts.app')
 
 @section('title')
-    كل العقارات
+    @if(isset($h1))
+        {{ $h1 }}
+    @endif
+
+    @if(isset($array) && !empty($array))
+        @foreach($array as $key => $value)
+            {{ searchNameField()[$key]  }} ->
+            @if($key == 'type')
+                {{ building_type()[$value-1] }}
+            @elseif($key == 'rent')
+                {{ $value == 1 ? 'تمليك' : 'ايجار' }}
+            @elseif($key == 'place')
+                {{ places()[$value-1] }}
+            @else
+                {{ $value }}
+            @endif
+        @endforeach
+    @endif
 @endsection
 
 @section('content')
@@ -9,14 +26,37 @@
     <div class="row-profile">
         <h3 class="h3">كل العقارات </h3>
         <div class="col-lg-9">
+            <h1>
+                @if(isset($h1))
+                    {{ $h1 }}
+                @endif
+                @if(isset($array) && !empty($array))
+                    @foreach($array as $key => $value)
+{{--                            {{ searchNameField()[$key]  }}--}}
+                        ->
+                        @if($key == 'type')
+                            {{ building_type()[$value-1] }}
+                        @elseif($key == 'rent')
+                            {{ $value == 1 ? 'تمليك' : 'ايجار' }}
+                        @elseif($key == 'place')
+                            {{ places()[$value-1] }}
+                        @else
+                            {{ $value }}
+                        @endif
+                    @endforeach
+                @endif
+            </h1>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb" style="background-color: #FFF;">
-                        <li class="breadcrumb-item"><a href="{{ route('home') }}"> الرئيسيه </a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('home') }}" title="الرئيسيه"> الرئيسيه </a></li>
+                        @if(isset($h1))
+                            <li><a href="{{ url('/') }}" title="{{ $h1 }}"> {{ $h1 }} </a> </li>
+                        @endif
                         @if(isset($array) && !empty($array))
                             @foreach($array as $key => $value)
                                 <li class="breadcrumb-item">
-                                    <a href="{{ url('/search?' . $key . '=' . $value) }}">
-                                        {{ searchNameField()[$key]  }} ->
+                                    <a href="{{ url('/search?' . $key . '=' . $value) }}" title="{{ searchNameField()[$key] }}">
+{{--                                        {{ searchNameField()[$key]  }} ->--}}
                                         @if($key == 'type')
                                             {{ building_type()[$value-1] }}
                                         @elseif($key == 'rent')
@@ -38,9 +78,9 @@
                     <div class="col-md-4 col-sm-6 pull-right">
                         <div class="product-grid3">
                             <div class="product-image3">
-                                <a href="{{  url('/building/' . $building->id) }}">
-                                    <img class="pic-1" src="/uploads/buildings_images/{{ $building->image }}">
-                                    <img class="pic-2" src="/uploads/buildings_images/{{ $building->image }}">
+                                <a href="{{  url('/building/' . $building->id) }}" title="{{ $building->name }}">
+                                    <img class="pic-1" src="{{ url('uploads/buildings_images/' . $building->image) }}" title="{{ $building->name }}" alt="{{ $building->name }}">
+                                    <img class="pic-2" src="{{ url('uploads/buildings_images/' . $building->image) }}" title="{{ $building->name }}" alt="{{ $building->name }}">
                                 </a>
                                 <ul class="social">
                                     @if($building->status == 0)
